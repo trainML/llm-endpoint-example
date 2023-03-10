@@ -118,8 +118,8 @@ async def create_endpoint(trainml, endpoint_type, model_type, gpu_count):
         disk_size=10,
         endpoint=dict(routes=routes),
         model=dict(
-            source_type="local",
-            source_uri=os.getcwd(),
+            source_type="git",
+            source_uri="https://github.com/trainML/llm-endpoint-example.git",
             checkpoints=[dict(id=model_type, public=True)],
         ),
         environment=dict(
@@ -144,9 +144,7 @@ if __name__ == "__main__":
             args.gpu_count,
         )
     )
-    asyncio.run(job.wait_for("waiting for data/model download"))
-    asyncio.run(job.connect())
+    print("Created Endpoint: ", job.id, " Waiting to Start...")
     asyncio.run(job.wait_for("running"))
-    asyncio.run(job.disconnect())
     print("Job ID: ", job.id, " Running")
     print("URL", job.url)
