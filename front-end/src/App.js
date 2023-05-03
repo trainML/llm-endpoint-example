@@ -65,20 +65,16 @@ function App() {
   };
 
   const setConfiguration = (values) => {
-    console.log(values);
-    console.log(JSON.parse(values.stop));
     setEndpoint(values.endpoint);
     setMaxTokens(values.max_tokens);
     setTemperature(values.temperature);
     setTopP(values.top_p);
     setStop(values.stop);
     setChatWarmup(values.chat_warmup);
-    if (values.interaction_type !== interaction_type) {
-      setInteractionType(values.interaction_type);
-      setChatHistory(values.chat_warmup);
-      setPrompt('');
-      setCompletion('');
-    }
+    setInteractionType(values.interaction_type);
+    setChatHistory(values.chat_warmup);
+    setPrompt('');
+    setCompletion('');
   };
 
   const sendPrompt = async () => {
