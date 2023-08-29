@@ -6,7 +6,7 @@
 
 This repository walks through how to use the [trainML platform](https://www.trainml.ai) to deploy a large language model for use in interactive chat tasks similar to [ChatGPT](https://platform.openai.com/docs/guides/chat). Running the default endpoint in the example as described will consume 0.98 credits ($0.98 USD) per hour of runtime.
 
-![image](assets/chat-example.png)
+![image](assets/chat-example.gif)
 
 ### Prerequisites
 
